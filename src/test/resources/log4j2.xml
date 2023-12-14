@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN">
+
+    <Properties>
+        <Property name="basePath">./logs</Property>
+        <!--
+        -> Burada, oluşturulacak olan Log dosyalarının nereye kaydedileceğini belirtiyoruz.
+           ./logs => Logların kaydedileceği LogFile'ın konumu.
+                  => Bu klasörü projenin en başında bu amaçla biz oluşturmuştuk (sol tarafta "logs" ismindeki boş klasör).
+                  => TestCase'leri koşunca bu "logs" klasörünün içinde "automation.log" adında bir LogFile oluşuyor.
+           "basePath" ise, bu path'in adı (yani LogsFolder).
+        -> "Appenders" bloğundaki "RollingFile" bloğunda yer alan "filePattern" kısmında Log file'ın adı ile beraber
+           zaman da belirtiliyor ("yıl-ay-gün" formatında).
+           Buradaki "zaman" için Pavan "timestamp" tabirini kullandı ("timestamp" = zaman damgası).
+           Çünkü Logların geçmişini de tutmalıyız.
+           Bundan dolayı Logları zaman/tarih bilgisiyle beraber kaydediyoruz.
+        -->
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <!--
+            -> Bu "Console" bloğu, Logların Console Penceresi'nde gözükebilmesi için var.
+            -->
+        </Console>
+
+        <RollingFile name="File" fileName="${basePath}/automation.log"
+                     filePattern="${basePath}/automation-%d{yyyy-MM-dd}.log">  <!-- ".log" => dosya uzantısı (file extension) -->
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <SizeBasedTriggeringPolicy size="50000"/>
+            <!--
+            -> Bu "RollingFile" bloğu ise, Logların ayrı bir dosyada gözükebilmesi için var.
+            -> "size = 50000" => Maximum size of Log File.
+            -> 2 çeşit Appender mevcut: Console ve File.
+               Eğer Logları Console Window'da görmek istiyorsak burada bir "Console" bloğu tanımlıyoruz.
+               Eğer Logları ayrı bir dosyada (LogFile) görmek istiyorsak burada bir "RollingFile" bloğu tanımlıyoruz.
+               Bunu ayrıca aşağıdaki "Loggers" bloğunda belirtiyoruz.
+               Normalde Logları Console Window'da görüntülemeyiz, bunun için ayrı bir LogFile oluştururuz.
+               Bundan dolayı aşağıdaki "Loggers" bloğunda sadece "ref = File" yapıyoruz.
+            -->
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="Info"><!-- Here you can use multiple log levels All < Trace < Debug < Info < Warn < Error < Fatal < Off -->
+            <AppenderRef ref="File"/>  <!-- Logların ayrı bir LogFile dosyasında oluşması için -->
+            <!-- <AppenderRef ref="Console"/> -->  <!-- Logların Console Window'da gözükmesi için (tercih edilmiyor) -->
+        </Root>
+        <!--
+        -> Hangi tipte Log oluşturmak istediğimizi bu "Loggers" bloğunda belirtiyoruz (InfoLog, DebugLog, WarnLog etc).
+        -> "level" satırında yazan Log tipleri, farklı Log levelleri oluyor (Trace, Debug, Info etc).
+        -> Burada Log level = "Info" olarak belirlenmiş.
+           Bu durumda "Info" ve sıralamada sağ tarafında yer alan Log tipleri kaydedilir.
+           Eğer Log level = "Warn" olarak ayarlansaydı, bu durumda da "Warn" ve sağ tarafındaki tipte olan Loglar kaydedilirdi.
+           "Off" = "Hiçbir tipte Log kaydedilmesin" anlamına geliyor.
+           Genelde "Info" ya da "Debug" tercih ediyoruz.
+        ->
+        -->
+    </Loggers>
+
+</Configuration>

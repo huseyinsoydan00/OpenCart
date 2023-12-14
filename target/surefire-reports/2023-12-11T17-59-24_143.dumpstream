@@ -1,0 +1,5 @@
+# Created at 2023-12-11T17:59:25.390
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Yazılım\Test\7) Pavan Kumar - SDET Bootcamp\Bölüm-8 - CI - Maven - Git - GitHub - Jenkins\OpenCart\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

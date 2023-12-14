@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="OpenCartSuite">
+
+    <!-- Rapor almak için "ExtentReportManager" Utility classını "listener" olarak bu XML'e ekledik -->
+    <listeners>
+        <listener class-name="utilities.ExtentReportManager"/>
+    </listeners>
+
+    <test name="OpenCartTest">
+        <parameter name="browser" value="chrome"/>  <!-- Bu parametreyi, Browser'ı parametreleştirmek için biz ekledik -->
+        <classes>
+            <class name="testCases.TC_001_AccountRegistrationTest"/>
+            <!--
+            <class name="testCases.TC_002_LoginTest"/>             *** 45. derste ekledik ***
+            <class name="testCases.TC_003_LoginDataDrivenTest"/>   *** 45. derste ekledik ***
+            -->
+        </classes>
+    </test>
+
+</suite>
+
+
+<!--
+-> TestCase'leri "seri" olarak koşmak istiyorsak (önce biri, sonra diğeri) bu XML'i kullanacağız.
+-->

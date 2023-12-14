@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="OpenCartSuite" parallel="tests">  <!-- Testleri (test bloklarını) paralel koşmak için "suite" kısmına "parallel = tests" ekliyoruz -->
+
+    <test thread-count="5" name="ChromeTests">
+        <parameter name="browser" value="chrome"/>  <!-- CHROME -->
+        <classes>
+            <class name="testCases.TC_001_AccountRegistrationTest"/>
+        </classes>
+    </test>
+
+    <test thread-count="5" name="EdgeTests">
+        <parameter name="browser" value="edge"/>  <!-- EDGE -->
+        <classes>
+            <class name="testCases.TC_001_AccountRegistrationTest"/>
+        </classes>
+    </test>
+
+</suite>
+
+
+<!--
+-> Bu XML'i, TestCase'leri "paralel" olarak (aynı anda) farklı tarayıcılarda (Chrome + Edge) koşmak için kullanacağız.
+-> "suite" kısmına "parallel = tests" ifadesini eklemezsek TestCase'ler (test blokları) seri olarak koşar.
+   Yani önce ilki, sonra ikincisi koşar.
+   Ancak "parallel = tests" ifadesini eklediğimizde testler (test blokları) paralel olarak (aynı anda) koşar.
+-->
