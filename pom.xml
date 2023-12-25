@@ -46,7 +46,7 @@
                         <archive>
                             <index>true</index>
                             <manifest>
-                                <mainClass>your.package.yourprogram.YourMainClass</mainClass>
+                                <mainClass>org.example.Main</mainClass>
                             </manifest>
                         </archive>
                     </configuration>
