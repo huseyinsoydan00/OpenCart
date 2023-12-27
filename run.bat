@@ -11,7 +11,7 @@ mvn test
 :: OpenCart klasöründeki bu dosyaya çift tıkladığımızda otomatik olarak CMD açılıyor ve testler koşmaya başlıyor.
 
 :: Pavan ilk satırı yazmasına rağmen CMD açıldığı anda zaten otomatik olarak bu dosyanın bulunduğu path ile başlıyor.
-:: Yani ekstra olarak "cd" ile OpenCart proje klasörüne geçiş yapmaya gerek yok.
+:: Yani CMD'de ekstra olarak "cd" ile OpenCart proje klasörüne geçiş yapmaya gerek yok.
 :: Direkt olarak "mvn test" yazdığımızda zaten CMD, OpenCart proje klasörünün path'i ile başladığı için sadece sonuna
 :: "mvn test" ifadesinin eklenmesi yeterli.
 

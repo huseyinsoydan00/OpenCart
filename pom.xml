@@ -27,7 +27,14 @@
                     <version>3.2.2</version>
                     <configuration>
                         <suiteXmlFiles>
-                            <suiteXmlFile>master.xml</suiteXmlFile>  <!-- pom.xml'den çalıştırılacak olan XML'i, "surefire" içerisine yazıyoruz -->
+                            <suiteXmlFile>master.xml</suiteXmlFile>
+                            <!--
+                            - pom.xml'den çalıştırılacak olan XML'i, "maven-surefire-plugin" bloğu içerisine yazıyoruz.
+                              Ardından da pom.xml içerisinde boş bir yere sağ click yapıp "Run Maven" ve "test" diyoruz
+                              ve projemiz (yani burada belirttiğimiz "master.xml"), pom.xml üzerinden çalıştırılıyor
+                              (master.xml'de de sadece "testCases.TC_001_AccountRegistrationTest" TestCase'ini belirttik)
+                              (yani sadece o TestCase çalışacak).
+                            -->
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>

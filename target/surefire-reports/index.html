@@ -24,22 +24,22 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
-      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
       <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
-          <img src="collapseall.gif" class="collapse-all-icon">
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" panel-name="suite-OpenCartSuite" class="navigator-link">
+            <a href="#" class="navigator-link" panel-name="suite-OpenCartSuite">
               <span class="suite-name border-passed">OpenCartSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
@@ -50,37 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" panel-name="test-xml-OpenCartSuite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="test-xml-OpenCartSuite">
                     <span>D:\Yazılım\Test\7) Pavan Kumar - SDET Bootcamp\Bölüm-8 - CI - Maven - Git - GitHub - Jenkins\OpenCart\master.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="testlist-OpenCartSuite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="testlist-OpenCartSuite">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="group-OpenCartSuite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="group-OpenCartSuite">
                     <span>2 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="times-OpenCartSuite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="times-OpenCartSuite">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="reporter-OpenCartSuite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="reporter-OpenCartSuite">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="ignored-methods-OpenCartSuite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-OpenCartSuite">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="chronological-OpenCartSuite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="chronological-OpenCartSuite">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -103,8 +103,8 @@
                     </span>
                     <div class="method-list-content passed suite-OpenCartSuite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-OpenCartSuite" title="testCases.TC_001_AccountRegistrationTest" class="method navigator-link" hash-for-method="test_account_Registration">test_account_Registration</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-OpenCartSuite" title="testCases.TC_001_AccountRegistrationTest" hash-for-method="test_account_Registration">test_account_Registration</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-OpenCartSuite -->
@@ -143,11 +143,11 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;OpenCartSuite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;OpenCartSuite&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;utilities.ExtentReportManager&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;OpenCartTest&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;OpenCartTest&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testCases.TC_001_AccountRegistrationTest&quot;/&gt;
@@ -210,12 +210,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test_account_Registration')
 data.setCell(0, 2, 'testCases.TC_001_AccountRegistrationTest')
-data.setCell(0, 3, 4436);
+data.setCell(0, 3, 7427);
 window.suiteTableData['OpenCartSuite']= { tableData: data, tableDiv: 'times-div-OpenCartSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
               <div id="times-div-OpenCartSuite">
               </div> <!-- times-div-OpenCartSuite -->
             </div> <!-- times-div -->
@@ -248,11 +248,11 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">test_account_Registration</span>
-                <span class="method-start">11366 ms</span>
+                <span class="method-start">31050 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">15832 ms</span>
+                <span class="method-start">38539 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
